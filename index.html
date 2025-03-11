@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-black text-white">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-900 p-5 flex flex-col">
+            <div class="flex items-center space-x-2 mb-5">
+                <img src="https://via.placeholder.com/40" class="rounded-full" alt="Profile">
+                <div>
+                    <h2 class="text-lg font-semibold">Sophia Mia</h2>
+                    <p class="text-gray-400 text-sm">ID: 150001</p>
+                </div>
+            </div>
+            <nav class="flex-1">
+                <ul>
+                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Dashboards</a></li>
+                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">eCommerce</a></li>
+                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Analytics</a></li>
+                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">CRM</a></li>
+                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Hospital</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-5">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-5">
+                <h1 class="text-xl font-bold">Dashboard</h1>
+                <button class="bg-gray-700 px-4 py-2 rounded-lg">Schedule</button>
+            </div>
+            
+            
+
+            <!-- Dashboard Content -->
+            <div class="mt-6 bg-gray-800 p-6 rounded-lg flex justify-between">
+                <div>
+                    <h2 class="text-lg font-semibold">Welcome Back Sophia Mia</h2>
+                    <p class="text-gray-400">You have earned 49% more than last month which is great.</p>
+                    <div class="mt-4 flex space-x-6">
+                        <div>
+                            <p class="text-white text-xl font-bold">$4878</p>
+                            <p class="text-gray-400 text-sm">Today's Sales</p>
+                        </div>
+                        <div>
+                            <p class="text-white text-xl font-bold">49%</p>
+                            <p class="text-gray-400 text-sm">Overall Performance</p>
+                        </div>
+                        <div>
+                            <p class="text-white text-xl font-bold">49%</p>
+                            <p class="text-gray-400 text-sm">Overall Performance</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="shopping_cart.png" class="w-40 h-40" alt="Shopping Cart">
+            </div>
+            
+            <!-- Cards -->
+            <div class="grid grid-cols-3 gap-4 mt-6">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-gray-400">Expense</h3>
+                    <p class="text-white text-xl font-bold">$18725</p>
+                    <p class="text-green-400 text-sm">2.87 This month</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-gray-400">Sales Profit</h3>
+                    <p class="text-white text-xl font-bold">$25874</p>
+                    <p class="text-green-400 text-sm">2.87 This month</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-gray-400">Net Profit</h3>
+                    <p class="text-white text-xl font-bold">$245M</p>
+                </div>
+                
+            </div>
+
+            <!-- Product Sales Chart -->
+            <div class="bg-gray-800 p-6 mt-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold">Product Sales</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <!-- Product Stock -->
+            <h2 class="text-2xl font-semibold mb-4">Product Stock</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-gray-800 rounded-lg">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-3 px-4 text-left">Product Code</th>
+                            <th class="py-3 px-4 text-left">Item</th>
+                            <th class="py-3 px-4 text-left">Qty Left</th>
+                            <th class="py-3 px-4 text-left">Status</th>
+                            <th class="py-3 px-4 text-left">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">PEP-1478</td>
+                            <td class="py-3 px-4">Blouse Ruffle Tube top</td>
+                            <td class="py-3 px-4">145</td>
+                            <td class="py-3 px-4"><span class="bg-yellow-500 text-black px-2 py-1 rounded">Low Stock</span></td>
+                            <td class="py-3 px-4">$14.99</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">PEP-1479</td>
+                            <td class="py-3 px-4">Gold-colored locket watch</td>
+                            <td class="py-3 px-4">569</td>
+                            <td class="py-3 px-4"><span class="bg-purple-600 text-white px-2 py-1 rounded">In Stock</span></td>
+                            <td class="py-3 px-4">$19.99</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">PEP-1482</td>
+                            <td class="py-3 px-4">Yellow women shoes</td>
+                            <td class="py-3 px-4">0</td>
+                            <td class="py-3 px-4"><span class="bg-red-600 text-white px-2 py-1 rounded">Out of Stock</span></td>
+                            <td class="py-3 px-4">$49.99</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">PEP-1483</td>
+                            <td class="py-3 px-4">Yellow women shoes</td>
+                            <td class="py-3 px-4">0</td>
+                            <td class="py-3 px-4"><span class="bg-red-600 text-white px-2 py-1 rounded">Out of Stock</span></td>
+                            <td class="py-3 px-4">$49.99</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">PEP-1484</td>
+                            <td class="py-3 px-4">Yellow women shoes</td>
+                            <td class="py-3 px-4">0</td>
+                            <td class="py-3 px-4"><span class="bg-red-600 text-white px-2 py-1 rounded">Out of Stock</span></td>
+                            <td class="py-3 px-4">$49.99</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">PEP-1485</td>
+                            <td class="py-3 px-4">Yellow women shoes</td>
+                            <td class="py-3 px-4">0</td>
+                            <td class="py-3 px-4"><span class="bg-red-600 text-white px-2 py-1 rounded">Out of Stock</span></td>
+                            <td class="py-3 px-4">$49.99</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">PEP-1486</td>
+                            <td class="py-3 px-4">Yellow women shoes</td>
+                            <td class="py-3 px-4">0</td>
+                            <td class="py-3 px-4"><span class="bg-red-600 text-white px-2 py-1 rounded">Out of Stock</span></td>
+                            <td class="py-3 px-4">$49.99</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">PEP-1487</td>
+                            <td class="py-3 px-4">Yellow women shoes</td>
+                            <td class="py-3 px-4">0</td>
+                            <td class="py-3 px-4"><span class="bg-red-600 text-white px-2 py-1 rounded">Out of Stock</span></td>
+                            <td class="py-3 px-4">$49.99</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">PEP-1488</td>
+                            <td class="py-3 px-4">Yellow women shoes</td>
+                            <td class="py-3 px-4">0</td>
+                            <td class="py-3 px-4"><span class="bg-red-600 text-white px-2 py-1 rounded">Out of Stock</span></td>
+                            <td class="py-3 px-4">$49.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-end mt-4 space-x-2">
+                <button class="bg-gray-700 px-4 py-2 rounded">Prev</button>
+                <button class="bg-blue-500 px-4 py-2 rounded">1</button>
+                <button class="bg-gray-700 px-4 py-2 rounded">2</button>
+                <button class="bg-gray-700 px-4 py-2 rounded">Next</button>
+            </div>
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- Traffic Graph -->
+                <div class="bg-gray-800 p-5 rounded-lg">
+                    <h2 class="text-lg font-semibold mb-3">Traffic</h2>
+                    <div class="w-full h-40 bg-gray-700 flex items-center justify-center">Graph Placeholder</div>
+                </div>
+                
+                <!-- Messages -->
+                <div class="bg-gray-800 p-5 rounded-lg">
+                    <h2 class="text-lg font-semibold mb-3">My Messages</h2>
+                    <button class="w-full bg-blue-500 text-white py-2 rounded-lg mb-3">New Message</button>
+                    <div>
+                        <div class="flex items-center mb-2">
+                            <img src="https://via.placeholder.com/30" class="rounded-full" alt="User ">
+                            <div class="ml-3">
+                                <p class="font-semibold">John Davis</p>
+                                <p class="text-gray-400 text-sm">Hello, how are you?</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <img src="https://via.placeholder.com/30" class="rounded-full" alt="User ">
+                            <div class="ml-3">
+                                <p class="font-semibold">Jordan Davis</p>
+                                <p class="text-gray-400 text-sm">Here are some illustrations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chart.js Script -->
+    <script>
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                datasets: [
+                    {
+                        label: 'Net Profit',
+                        data: [30, 45, 50, 47, 52, 55, 60, 58, 65],
+                        backgroundColor: '#fca5a5'
+                    },
+                    {
+                        label: 'Revenue',
+                        data: [60, 75, 90, 85, 80, 95, 85, 100, 90],
+                        backgroundColor: '#3b82f6'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
