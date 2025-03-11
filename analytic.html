@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 p-4 flex flex-col">
+            <h1 class="text-2xl font-bold text-blue-500">Domiex</h1>
+            <nav class="mt-6">
+                <a href="#" class="block py-2 px-4 bg-gray-700 rounded">Dashboards</a>
+                <a href="#" class="block py-2 px-4 mt-2 hover:bg-gray-700">Analytics</a>
+                <a href="#" class="block py-2 px-4 mt-2 hover:bg-gray-700">Email</a>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h2 class="text-xl font-semibold">Analytics</h2>
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <!-- Sales Revenue Chart -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-lg">Sales Revenue</h3>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <!-- Ads Revenue Chart -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-lg">Ads Revenue</h3>
+                    <canvas id="adsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <!-- Sales Revenue -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold">Sales Revenue</h3>
+                    <p class="text-2xl font-bold">$145M</p>
+                </div>
+                <!-- Ads Revenue -->
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold">Ads Revenue</h3>
+                    <p class="text-2xl font-bold">$145M</p>
+                </div>
+            </div>
+
+            <!-- Recent Transactions -->
+            <div class="mt-6 bg-gray-800 p-4 rounded-lg">
+                <h2 class="text-lg font-semibold">Recent Transactions</h2>
+                <table class="w-full mt-4 text-left">
+                    <thead>
+                        <tr class="text-gray-400">
+                            <th class="py-2">Order Date</th>
+                            <th class="py-2">Product</th>
+                            <th class="py-2">Price</th>
+                            <th class="py-2">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-2">21 Jan, 2024</td>
+                            <td class="py-2">Jeremy McMullen</td>
+                            <td class="py-2">$154</td>
+                            <td class="py-2"><span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Success</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-2">28 Jan, 2024</td>
+                            <td class="py-2">Charles Fischer</td>
+                            <td class="py-2">$150</td>
+                            <td class="py-2"><span class="bg-red-600 text-white px-2 py-1 rounded text-xs">Cancel</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-2">02 Feb, 2024</td>
+                            <td class="py-2">Louise Harms</td>
+                            <td class="py-2">$255</td>
+                            <td class="py-2"><span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Success</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-2">11 Feb, 2024</td>
+                            <td class="py-2">Henry Boyle</td>
+                            <td class="py-2">$347</td>
+                            <td class="py-2"><span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Success</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Followers Statistics -->
+            <div class="mt-6 bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-5">Followers Statistics</h2>
+                <canvas id="followersChart"></canvas>
+            </div>
+
+            <!-- Top Users -->
+            <div class="mt-6 bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-4">Top Users (Contributors)</h3>
+                <ul>
+                    <li class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <p class="font-semibold">Julian Glover</p>
+                            <p class="text-gray-400 text-sm">78.4M Followers</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/2.jpg" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <p class="font-semibold">Steve Powlowski</p>
+                            <p class="text-gray-400 text-sm">64.9M Followers</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <p class="font-semibold">Della Brekke</p>
+                            <p class="text-gray-400 text-sm">62.3M Followers</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Top Countries -->
+            <div class="mt-6 bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold">Top Country</h3>
+                <p class="text-2xl font-bold">3145+ <span class="text-green-500">↑ 3.87%</span></p>
+                <ul class="mt-3">
+                    <li class="flex justify-between">
+                        <span>🇺🇸 United States</span>
+                        <span class="font-semibold">24%</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span>🇩🇪 Germany</span>
+                        <span class="font-semibold">17%</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span>🇮🇹 Italy</span>
+                        <span class="font-semibold">16%</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Visit Browsers Chart -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg font-semibold">Visit Browsers</h3>
+            <p class="text-2xl font-bold">4510+ <span class="text-green-500">↑ 1.9%</span></p>
+            <canvas id="visitBrowsersChart"></canvas>
+        </div>
+
+        <!-- Traffic Source Chart -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg font-semibold">Traffic Source</h3>
+            <canvas id="trafficSourceChart"></canvas>
+        </div>
+
+        <!-- Top Users -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg font-semibold mb-4">Top Users (Contributors)</h3>
+            <ul>
+                <li class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <p class="font-semibold">Julian Glover</p>
+                        <p class="text-gray-400 text-sm">78.4M Followers</p>
+                    </div>
+                </li>
+                <li class="flex items-center mb-3">
+                    <img src="https://randomuser.me/api/portraits/men/2.jpg" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <p class="font-semibold">Steve Powlowski</p>
+                        <p class="text-gray-400 text-sm">64.9M Followers</p>
+                    </div>
+                </li>
+                <li class="flex items-center">
+                    <img src="https://randomuser.me/api/portraits/women/1.jpg" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <p class="font-semibold">Della Brekke</p>
+                        <p class="text-gray-400 text-sm">62.3M Followers</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Top Countries -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 class="text-lg font-semibold">Top Country</h3>
+            <p class="text-2xl font-bold">3145+ <span class="text-green-500">↑ 3.87%</span></p>
+            <ul class="mt-3">
+                <li class="flex justify-between">
+                    <span>🇺🇸 United States</span>
+                    <span class="font-semibold">24%</span>
+                </li>
+                <li class="flex justify-between">
+                    <span>🇩🇪 Germany</span>
+                    <span class="font-semibold">17%</span>
+                </li>
+                <li class="flex justify-between">
+                    <span>🇮🇹 Italy</span>
+                    <span class="font-semibold">16%</span>
+                </li>
+            </ul>
+        </div>
+
+        </main>
+    </div>
+
+    <!-- Chart.js Script -->
+    <script>
+        // Sales Revenue Chart
+        const salesCtx = document.getElementById('salesChart').getContext('2d');
+        new Chart(salesCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [10, 20, 15, 25, 30, 50, 45],
+                    borderColor: 'blue',
+                    borderWidth: 2,
+                    fill: false,
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        // Ads Revenue Chart
+        const adsCtx = document.getElementById('adsChart').getContext('2d');
+        new Chart(adsCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                datasets: [{
+                    label: 'Ads Revenue',
+                    data: [5, 15, 10, 8, 20, 25, 30],
+                    borderColor: 'red',
+                    borderWidth: 2,
+                    fill: false,
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        // Followers Chart
+        const followersCtx = document.getElementById('followersChart').getContext('2d');
+        new Chart(followersCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [
+                    {
+                        label: 'Followers',
+                        data: [44, 55, 41, 67, 22, 43],
+                        backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                        borderRadius: 5,
+                    },
+                    {
+                        label: 'Unfollow',
+                        data: [13, 23, 20, 8, 13, 27],
+                        backgroundColor: 'rgba(156, 163, 175, 0.8)',
+                        borderRadius: 5,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Web Analytics Chart
+        const analyticsCtx = document.getElementById('analyticsChart').getContext('2d');
+        new Chart(analyticsCtx, {
+            type: 'line',
+            data: {
+                labels: ['Aug', 'Sep', 'Oct', 'Nov'],
+                datasets: [
+                    { label: 'Referral', borderColor: 'blue', data: [3, 4, 7, 5] },
+                    { label: 'Direct', borderColor: 'green', data: [2, 3, 4, 6] },
+                    { label: 'Ads', borderColor: 'purple', data: [4, 2, 6, 7] }
+                ]
+            },
+            options: { responsive: true }
+        });
+    
+        // Visit Browsers (Doughnut Chart)
+        new Chart(document.getElementById('visitBrowsersChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Chrome', 'Safari', 'Edge'],
+                datasets: [{
+                    data: [60, 25, 15],
+                    backgroundColor: ['#3b82f6', '#f59e0b', '#f87171'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Traffic Source (Bar Chart)
+        new Chart(document.getElementById('trafficSourceChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [
+                    {
+                        label: 'Direct Traffic',
+                        data: [30, 45, 28, 50, 40, 60],
+                        backgroundColor: '#3b82f6'
+                    },
+                    {
+                        label: 'Search Engine Traffic',
+                        data: [40, 55, 38, 60, 50, 70],
+                        backgroundColor: '#9ca3af'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    
+    </script>
+</body>
+</html>
