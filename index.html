@@ -6,15 +6,18 @@
     <title>Dashboard Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="bg-black text-white">
+<body class="bg-gray-900 text-white">
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-gray-900 p-5 flex flex-col">
+        <aside class="w-64 bg-gray-800 p-5 flex flex-col h-screen">
             <div class="flex items-center space-x-2 mb-5">
-                <img src="https://via.placeholder.com/40" class="rounded-full" alt="Profile">
+                <img src="foto.png" class="rounded-full w-12 h-12" alt="Profile">
+
                 <div>
                     <h2 class="text-lg font-semibold">Sophia Mia</h2>
                     <p class="text-gray-400 text-sm">ID: 150001</p>
@@ -22,11 +25,11 @@
             </div>
             <nav class="flex-1">
                 <ul>
-                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Dashboards</a></li>
-                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">About</a></li>
-                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Contact</a></li>
-                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Settings</a></li>
-                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Logout</a></li>
+                    <li class="mb-2"><a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Dashboards</a></li>
+                    <li class="mb-2"><a href="analytic.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Analytics</a></li>
+                    <li class="mb-2"><a href="email.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Email</a></li>
+                    <li class="mb-2"><a href="setting.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Settings</a></li>
+                    <li class="mb-2"><a href="file.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">File Manager</a></li>
                     <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">eCommerce</a></li>
                     <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Analytics</a></li>
                     <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">CRM</a></li>
@@ -71,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <img src="shopping_cart.png" class="w-40 h-40" alt="Shopping Cart">
+                <img src="image.png" class="w-40 h-40" alt="Shopping Cart">
             </div>
             
             <!-- Cards -->

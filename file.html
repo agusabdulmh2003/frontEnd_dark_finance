@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="h-screen bg-gray-900 text-white flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-800 p-4 flex flex-col">
+        <h1 class="text-2xl font-bold text-blue-500">File Manager</h1>
+        <nav class="flex-1">
+            <ul>
+                <li class="mb-2"><a href="index.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Dashboards</a></li>
+                <li class="mb-2"><a href="analytic.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Analytics</a></li>
+                <li class="mb-2"><a href="email.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Email</a></li>
+                <li class="mb-2"><a href="setting.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Settings</a></li>
+                <li class="mb-2"><a href="file.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">File Manager</a></li>
+                <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">eCommerce</a></li>
+                <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Analytics</a></li>
+                <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">CRM</a></li>
+                <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Hospital</a></li>
+                <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Calendar</a></li>
+                <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Settings</a></li>
+                <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Logout</a></li>
+                <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Help</a></li>
+                <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+        <!-- Breadcrumb -->
+        <div class="text-gray-400 mb-5">
+            <span>Dashboards</span> > <span class="text-white">File Manager</span>
+        </div>
+
+        <!-- File Manager Cards -->
+        <div class="grid grid-cols-3 gap-4">
+            <div class="bg-orange-900 p-5 rounded-lg">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-orange-600 p-3 rounded-full">
+                        📷
+                    </div>
+                    <h3 class="text-white text-lg">Images</h3>
+                </div>
+                <p class="mt-2 text-gray-300">245</p>
+            </div>
+
+            <div class="bg-blue-900 p-5 rounded-lg">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-600 p-3 rounded-full">
+                        📄
+                    </div>
+                    <h3 class="text-white text-lg">Documents</h3>
+                </div>
+                <p class="mt-2 text-gray-300">1472</p>
+            </div>
+
+            <div class="bg-yellow-900 p-5 rounded-lg">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-yellow-600 p-3 rounded-full">
+                        📑
+                    </div>
+                    <h3 class="text-white text-lg">PDF Files</h3>
+                </div>
+                <p class="mt-2 text-gray-300">98</p>
+            </div>
+
+            <div class="bg-purple-900 p-5 rounded-lg">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-purple-600 p-3 rounded-full">
+                        🎥
+                    </div>
+                    <h3 class="text-white text-lg">Video</h3>
+                </div>
+                <p class="mt-2 text-gray-300">159</p>
+            </div>
+
+            <div class="bg-teal-900 p-5 rounded-lg">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-teal-600 p-3 rounded-full">
+                        🎵
+                    </div>
+                    <h3 class="text-white text-lg">Audio</h3>
+                </div>
+                <p class="mt-2 text-gray-300">208</p>
+            </div>
+
+            <div class="bg-green-900 p-5 rounded-lg">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-green-600 p-3 rounded-full">
+                        📂
+                    </div>
+                    <h3 class="text-white text-lg">Others Files</h3>
+                </div>
+                <p class="mt-2 text-gray-300">1569</p>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-4">
+            <div class="mt-3 bg-gray p-4 rounded-lg flex items-center">
+                <span class="text-orange-400 text-2xl">&#128247;</span>
+                <p class="ml-4">Images (245)</p>
+            </div>
+            <div class="t-3 bg-gray p-4 rounded-lg flex items-center">
+                <span class="text-blue-400 text-2xl">&#128196;</span>
+                <p class="ml-4">Documents (1472)</p>
+            </div>
+            <div class="t-3 bg-gray p-4 rounded-lg flex items-center">
+                <span class="text-yellow-400 text-2xl">&#128209;</span>
+                <p class="ml-4">PDF Files (98)</p>
+            </div>
+        </div>
+        
+        <div class="mt-6 flex gap-6">
+            <!-- Recent Files -->
+            <div class="bg-gray-800 p-6 rounded-lg flex-1">
+                <h2 class="text-xl font-semibold">Recent Files</h2>
+                <ul class="mt-4 space-y-2">
+                    <li class="flex justify-between">
+                        <span>Brand Logo.png</span><span>2.6 MB</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span>AI Chat Module.ai</span><span>29 MB</span>
+                    </li>
+                    <li class="flex justify-between">
+                        <span>Domiex Intro.mp4</span><span>44 MB</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Storage Overview -->
+            <div class="bg-gray-800 p-6 rounded-lg w-1/3">
+                <h2 class="text-xl font-semibold">Overview Storage</h2>
+                <canvas id="storageChart" class="mt-4"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const ctx = document.getElementById('storageChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Docs', 'Images', 'Video', 'Audio', 'Others'],
+                datasets: [{
+                    data: [32, 23.8, 25.6, 9.9, 8.7],
+                    backgroundColor: ['#4A90E2', '#F5A623', '#7ED321', '#BD10E0', '#D0021B'],
+                }]
+            },
+            options: { cutout: '70%' }
+        });
+    </script>
+</body>
+</html>
