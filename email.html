@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 p-5">
+            <div class="flex items-center space-x-3 mb-6">
+                <img src="https://via.placeholder.com/40" class="rounded-full" alt="Profile">
+                <div>
+                    <h2 class="text-lg font-semibold">Sophia Mia</h2>
+                    <p class="text-sm text-gray-400">ID: 150001</p>
+                </div>
+            </div>
+            <nav>
+                <ul class="space-y-4">
+                    <li class="text-blue-400">Dashboards</li>
+                    <li class="text-gray-400 hover:text-white cursor-pointer">eCommerce</li>
+                    <li class="text-gray-400 hover:text-white cursor-pointer">Analytics</li>
+                    <li class="text-gray-400 hover:text-white cursor-pointer">Email</li>
+                    <li class="text-gray-400 hover:text-white cursor-pointer">CRM</li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <header class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-semibold">Email Dashboard</h1>
+                <button class="bg-blue-600 px-4 py-2 rounded">Schedule</button>
+            </header>
+            
+            <!-- Cards -->
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-5 rounded-lg">
+                    <h3 class="text-lg font-semibold">Emails Sent</h3>
+                    <p class="text-2xl font-bold">48k <span class="text-green-400">&#9650; This year</span></p>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg">
+                    <h3 class="text-lg font-semibold">Average Click Rate</h3>
+                    <p class="text-2xl font-bold">32k <span class="text-green-400">&#9650; This year</span></p>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg">
+                    <h3 class="text-lg font-semibold">Open Rate</h3>
+                    <p class="text-2xl font-bold">84% <span class="text-red-400">&#9660; This year</span></p>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg">
+                    <h3 class="text-lg font-semibold">Unsubscribe</h3>
+                    <p class="text-2xl font-bold">26% <span class="text-red-400">&#9660; This year</span></p>
+                </div>
+            </div>
+            
+            <!-- Campaign Section -->
+            <div class="bg-gray-800 p-6 rounded-lg mt-6">
+                <h3 class="text-lg font-semibold">Top Campaign</h3>
+                <p class="text-xl mt-2">Feeling Embarrassed By Your Design Skills? Here's What You Can Do.</p>
+                <p class="text-gray-400 mt-1">29 June, 2024</p>
+                <p class="text-lg font-bold mt-3">Conversion Rate: 1097 <span class="text-red-400">&#9660; 12.9% This year</span></p>
+            </div>
+            <div class="flex-1 p-5">
+                <h2 class="text-xl font-semibold">Email Campaign Performance</h2>
+                <div class="bg-gray-800 p-5 rounded-lg mt-4">
+                    <canvas id="emailChart"></canvas>
+                </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+                <!-- Donut Chart -->
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <canvas id="donutChart"></canvas>
+                </div>
+                <!-- Revenue Box -->
+                <div class="bg-blue-500 p-6 rounded-lg text-center">
+                    <h2 class="text-lg font-semibold">Total Revenue</h2>
+                    <p class="text-3xl font-bold">$145M</p>
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Mail Statistic Chart -->
+            <div class="bg-gray-800 p-6 mt-6 rounded-lg">
+                <h2 class="text-lg font-semibold mb-4">Mail Statistic</h2>
+                <canvas id="mailChart"></canvas>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-lg">
+                <h2 class="text-lg font-semibold mb-4">Monthly Campaign Stats</h2>
+                <div>
+                    <div class="flex justify-between items-center border-b border-gray-700 py-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">📩</span>
+                            <span>Campaign</span>
+                        </div>
+                        <span>48</span>
+                        <span class="text-green-400">0.9%</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-gray-700 py-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">📤</span>
+                            <span>Clicked</span>
+                        </div>
+                        <span>48.69%</span>
+                        <span class="text-green-400">2.9%</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-gray-700 py-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">📧</span>
+                            <span>Emails</span>
+                        </div>
+                        <span>47,899</span>
+                        <span class="text-green-400">0.5%</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-gray-700 py-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">📖</span>
+                            <span>Opened</span>
+                        </div>
+                        <span>71.12%</span>
+                        <span class="text-red-400">1.7%</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-gray-700 py-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 bg-blue-300 rounded-full flex items-center justify-center">👤</span>
+                            <span>Subscribe</span>
+                        </div>
+                        <span>47,165</span>
+                        <span class="text-green-400">0.8%</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                        <div class="flex items-center space-x-3">
+                            <span class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">❌</span>
+                            <span>Unsubscribe</span>
+                        </div>
+                        <span>287</span>
+                        <span class="text-red-400">0.4%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <h2 class="text-xl font-semibold">All Email Performance</h2>
+                <button class="bg-blue-500 px-4 py-2 rounded">Export</button>
+            </div>
+            
+            <div class="mt-5 bg-gray-800 p-5 rounded">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-2">Email</th>
+                            <th class="py-2">Publish Date</th>
+                            <th class="py-2">Sent</th>
+                            <th class="py-2">Click Rate</th>
+                            <th class="py-2">Delivered Rate</th>
+                            <th class="py-2">Spam Report Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-2">Financial Services</td>
+                            <td class="py-2">03 May, 2024</td>
+                            <td class="py-2">4</td>
+                            <td class="py-2">3.47%</td>
+                            <td class="py-2">7.89%</td>
+                            <td class="py-2">0.14%</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-2">Healthcare Update</td>
+                            <td class="py-2">10 May, 2024</td>
+                            <td class="py-2">5</td>
+                            <td class="py-2">4.12%</td>
+                            <td class="py-2">8.45%</td>
+                            <td class="py-2">0.20%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('emailChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                datasets: [
+                    {
+                        label: 'Sent',
+                        data: [28, 29, 33, 36, 32, 32, 33],
+                        borderColor: 'blue',
+                        fill: false
+                    },
+                    {
+                        label: 'Opened',
+                        data: [12, 11, 14, 18, 17, 13, 13],
+                        borderColor: 'gray',
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: 'white' }
+                    },
+                    y: {
+                        ticks: { color: 'white' }
+                    }
+                }
+            }
+        });
+        // Donut Chart
+        new Chart(document.getElementById("donutChart"), {
+            type: 'doughnut',
+            data: {
+                labels: ['Open Rate', 'Click Rate'],
+                datasets: [{
+                    data: [33, 57],
+                    backgroundColor: ['#3b82f6', '#ef4444']
+                }]
+            }
+        });
+
+        // Bar Chart (Revenue)
+        new Chart(document.getElementById("barChart"), {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    data: [20, 35, 50, 40, 60, 70],
+                    backgroundColor: '#ffffff'
+                }]
+            }
+        });
+
+        // Line Chart (Mail Statistics)
+        new Chart(document.getElementById("mailChart"), {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb'],
+                datasets: [
+                    { label: 'Sent', data: [43, 58], borderColor: '#3b82f6', fill: false },
+                    { label: 'Cancel', data: [55, 0], borderColor: '#ef4444', fill: false },
+                    { label: 'Pending', data: [0, 38], borderColor: '#22c55e', fill: false }
+                ]
+            }
+        });
+    </script>
+</body>
+</html>
