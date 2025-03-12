@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 p-5 flex flex-col h-screen fixed">
+            <h1 class="text-2xl font-bold text-blue-500">Settings</h1>
+            <nav class="flex-1 mt-4">
+                <ul>
+                    <li class="mb-2"><a href="../index.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Dashboards</a></li>
+                    <li class="mb-2"><a href="analytic.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Analytics</a></li>
+                    <li class="mb-2"><a href="email.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Email</a></li>
+                    <li class="mb-2"><a href="setting.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Settings</a></li>
+                    <li class="mb-2"><a href="file.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">File Manager</a></li>
+                    <li class="mb-2"><a href="chat.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Chat</a></li>
+                    <li class="mb-2"><a href="event.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Event</a></li>
+                    <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-6 ml-64">
+            <!-- Breadcrumb -->
+            <div class="text-gray-400 mb-5">
+                <span>Event</span> > <span class="text-white">List Event Tabel</span>
+            </div>
+            
+            <div class="bg-gray-800 p-4 rounded-lg overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="text-gray-400">
+                            <th class="py-2 px-4">Event Name</th>
+                            <th class="py-2 px-4">Event Date</th>
+                            <th class="py-2 px-4">People Size</th>
+                            <th class="py-2 px-4">Location</th>
+                            <th class="py-2 px-4">Event Type</th>
+                            <th class="py-2 px-4">Price</th>
+                            <th class="py-2 px-4">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">Tech Innovations Summit</td>
+                            <td class="px-4">15 Jun 2024</td>
+                            <td class="px-4">500</td>
+                            <td class="px-4">New York, NY</td>
+                            <td class="px-4">Offline</td>
+                            <td class="px-4">$899</td>
+                            <td class="px-4"><span class="bg-green-500 px-2 py-1 text-xs rounded">Published</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">Artistic Workshop</td>
+                            <td class="px-4">20 Jul 2024</td>
+                            <td class="px-4">300</td>
+                            <td class="px-4">London, UK</td>
+                            <td class="px-4">Online</td>
+                            <td class="px-4">$599</td>
+                            <td class="px-4"><span class="bg-red-500 px-2 py-1 text-xs rounded">Draft</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">Music Concert</td>
+                            <td class="px-4">25 Aug 2024</td>
+                            <td class="px-4">1000</td>
+                            <td class="px-4">Paris, France</td>
+                            <td class="px-4">Offline</td>
+                            <td class="px-4">$799</td>
+                            <td class="px-4"><span class="bg-green-500 px-2 py-1 text-xs rounded">Published</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">Fashion Show</td>
+                            <td class="px-4">30 Sep 2024</td>
+                            <td class="px-4">200</td>
+                            <td class="px-4">Tokyo, Japan</td>
+                            <td class="px-4">Online</td>
+                            <td class="px-4">$699</td>
+                            <td class="px-4"><span class="bg-red-500 px-2 py-1 text-xs rounded">Draft</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">Sports Event</td>
+                            <td class="px-4">05 Oct 2024</td>
+                            <td class="px-4">500</td>
+                            <td class="px-4">Sydney, Australia</td>
+                            <td class="px-4">Offline</td>
+                            <td class="px-4">$899</td>
+                            <td class="px-4"><span class="bg-green-500 px-2 py-1 text-xs rounded">Published</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3 px-4">Cultural Festival</td>
+                            <td class="px-4">10 Nov 2024</td>
+                            <td class="px-4">300</td>
+                            <td class="px-4">Berlin, Germany</td>
+                            <td class="px-4">Online</td>
+                            <td class="px-4">$599</td>
+                            <td class="px-4"><span class="bg-red-500 px-2 py-1 text-xs rounded">Draft</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Event Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <img src="https://via.placeholder.com/300x150" alt="Event Image" class="rounded-lg">
+                    <h3 class="text-xl font-semibold mt-2">Electronic Music Festival</h3>
+                    <p class="text-gray-400">20 Dec 2024 | Sydney, Australia</p>
+                    <button class="mt-2 bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Book Now</button>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <img src="https://via.placeholder.com/300x150" alt="Event Image" class="rounded-lg">
+                    <h3 class="text-xl font-semibold mt-2">Fashion Show</h3>
+                    <p class="text-gray-400">30 Jan 2025 | Paris, France</p>
+                    <button class="mt-2 bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Book Now</button>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <img src="https://via.placeholder.com/300x150" alt="Event Image" class="rounded-lg">
+                    <h3 class="text-xl font-semibold mt-2">Art Exhibition</h3>
+                    <p class="text-gray-400">10 Feb 2025 | Tokyo, Japan</p>
+                    <button class="mt-2 bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Book Now</button>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <img src="https://via.placeholder.com/300x150" alt="Event Image" class="rounded-lg">
+                    <h3 class="text-xl font-semibold mt-2">Music Concert</h3>
+                    <p class="text-gray-400">15 Mar 2025 | London, UK</p>
+                    <button class="mt-2 bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Book Now</button>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <img src="https://via.placeholder.com/300x150" alt="Event Image" class="rounded-lg">
+                    <h3 class="text-xl font-semibold mt-2">Cultural Festival</h3>
+                    <p class="text-gray-400">20 Apr 2025 | Sydney, Australia</p>
+                    <button class="mt-2 bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Book Now</button>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <img src="https://via.placeholder.com/300x150" alt="Event Image" class="rounded-lg">
+                    <h3 class="text-xl font-semibold mt-2">Fashion Show</h3>
+                    <p class="text-gray-400">30 May 2025 | Paris, France</p>
+                    <button class="mt-2 bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Book Now</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
