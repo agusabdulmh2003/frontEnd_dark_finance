@@ -9,20 +9,22 @@
 <body class="bg-gray-900 text-white">
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-gray-800 p-4">
-            <div class="flex items-center space-x-3">
-                <img src="https://via.placeholder.com/40" class="rounded-full" alt="User">
-                <div>
-                    <h2 class="text-lg font-bold">Sophia Mia</h2>
-                    <p class="text-sm text-gray-400">ID: 150001</p>
-                </div>
-            </div>
-            <nav class="mt-6">
-                <a href="#" class="block py-2 px-3 rounded bg-gray-700">Dashboards</a>
-                <a href="#" class="block py-2 px-3 mt-2 hover:bg-gray-700">Landing Page</a>
-                <a href="#" class="block py-2 px-3 mt-2 hover:bg-gray-700">Chat</a>
-                <a href="#" class="block py-2 px-3 mt-2 hover:bg-gray-700">Calendar</a>
-                <a href="#" class="block py-2 px-3 mt-2 hover:bg-gray-700">Email</a>
+        <aside class="w-64 bg-gray-800 p-4 flex flex-col">
+            <h1 class="text-2xl font-bold text-blue-500">Invoice</h1>
+            <nav class="flex-1">
+                <ul>
+                    <li class="mb-2"><a href="../index.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Dashboards</a></li>
+                    <li class="mb-2"><a href="../index.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Dashboards</a></li>
+                        <li class="mb-2"><a href="analytic.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Analytics</a></li>
+                        <li class="mb-2"><a href="file.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">File Manager</a></li>
+                        <li class="mb-2"><a href="chat.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Chat</a></li>
+                        <li class="mb-2"><a href="event.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Event</a></li>
+                        <li class="mb-2"><a href="invoice.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Invoice</a></li>
+                        <li class="mb-2"><a href="email.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Email</a></li>
+                        <li class="mb-2"><a href="setting.html" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Settings</a></li>
+                        <li class="mb-2"><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-700">Logout</a></li>
+                    
+                </ul>
             </nav>
         </aside>
         
@@ -49,7 +51,7 @@
             </div>
             <div class="mt-6 flex justify-between">
                 <input type="text" placeholder="Search invoice..." class="px-3 py-2 rounded bg-gray-800 text-white border border-gray-700">
-                <button class="px-4 py-2 bg-blue-600 rounded text-white">Create Invoice</button>
+                <button class="px-4 py-2 bg-blue-600 rounded text-white" src="#createinvoivce">Create Invoice</button>
             </div>
             <h2 class="text-3xl font-semibold mb-6">Invoices</h2>
             
@@ -112,7 +114,106 @@
                     <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">Pending</span>
                 </div>
             </div>
+            <h2 class="text-2xl font-bold mb-4 mt-6">Create Invoice</h2>
+        
+        <!-- Company Information -->
+        <div class="mb-4" id="createinvoivce">
+            <label class="block text-sm">Company Name</label>
+            <input type="text" class="w-full p-2 bg-gray-700 rounded mt-1" placeholder="Enter company name">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <label class="block text-sm">Email</label>
+                <input type="email" class="w-full p-2 bg-gray-700 rounded mt-1" placeholder="Enter email">
+            </div>
+            <div>
+                <label class="block text-sm">Phone Number</label>
+                <input type="text" class="w-full p-2 bg-gray-700 rounded mt-1" placeholder="Enter phone number">
+            </div>
+        </div>
+        
+        <!-- Invoice Details -->
+        <div class="grid grid-cols-3 gap-4 mt-4">
+            <div>
+                <label class="block text-sm">Invoice ID</label>
+                <input type="text" class="w-full p-2 bg-gray-700 rounded mt-1" value="#PEI-15485" disabled>
+            </div>
+            <div>
+                <label class="block text-sm">Invoice Date</label>
+                <input type="date" class="w-full p-2 bg-gray-700 rounded mt-1">
+            </div>
+            <div>
+                <label class="block text-sm">Payment Due Date</label>
+                <input type="date" class="w-full p-2 bg-gray-700 rounded mt-1">
+            </div>
+        </div>
+        
+        <!-- Product Info -->
+        <h3 class="text-xl font-semibold mt-6 mb-2">Products</h3>
+        <div class="mb-4 flex space-x-2">
+            <input type="text" id="product" class="flex-1 p-2 bg-gray-700 rounded" placeholder="Enter product name">
+            <input type="number" id="quantity" class="w-20 p-2 bg-gray-700 rounded" placeholder="Qty">
+            <input type="number" id="price" class="w-24 p-2 bg-gray-700 rounded" placeholder="Price">
+            <button onclick="addProduct()" class="bg-blue-500 px-4 py-2 rounded">Add</button>
+        </div>
+        
+        <table class="w-full text-left bg-gray-700 rounded-lg">
+            <thead>
+                <tr>
+                    <th class="p-2">Product</th>
+                    <th class="p-2">Qty</th>
+                    <th class="p-2">Price</th>
+                    <th class="p-2">Total</th>
+                    <th class="p-2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+        </table>
+        
+        <div class="text-right text-lg font-semibold mt-4">Total: $<span id="grandTotal">0.00</span></div>
+        
+        <!-- Buttons -->
+        <div class="flex justify-end space-x-4 mt-4 mb-2">
+            <button class="bg-gray-600 px-4 py-2 rounded">Reset</button>
+            <button class="bg-green-500 px-4 py-2 rounded">Print Invoice</button>
+            <button class="bg-blue-500 px-4 py-2 rounded">Save Invoice</button>
+        </div>
         </main>
     </div>
+
+    <script>
+        function addProduct() {
+            let product = document.getElementById("product").value;
+            let quantity = document.getElementById("quantity").value;
+            let price = document.getElementById("price").value;
+            let total = quantity * price;
+            
+            let row = `<tr class='border-b'>
+                <td class='p-2'>${product}</td>
+                <td class='p-2 text-center'>${quantity}</td>
+                <td class='p-2'>$${price}</td>
+                <td class='p-2'>$${total.toFixed(2)}</td>
+                <td class='p-2 text-center'><button onclick='removeProduct(this)' class='bg-red-500 px-2 py-1 rounded'>X</button></td>
+            </tr>`;
+            
+            document.getElementById("productList").innerHTML += row;
+            updateTotal();
+        }
+
+        function removeProduct(btn) {
+            btn.parentElement.parentElement.remove();
+            updateTotal();
+        }
+        
+        function updateTotal() {
+            let rows = document.querySelectorAll("#productList tr");
+            let total = 0;
+            rows.forEach(row => {
+                let price = parseFloat(row.cells[3].innerText.replace("$", ""));
+                total += price;
+            });
+            document.getElementById("grandTotal").innerText = total.toFixed(2);
+        }
+    </script>
 </body>
 </html>
