@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 p-4">
+            <div class="flex items-center space-x-3">
+                <img src="https://via.placeholder.com/40" class="rounded-full" alt="User">
+                <div>
+                    <h2 class="text-lg font-bold">Sophia Mia</h2>
+                    <p class="text-sm text-gray-400">ID: 150001</p>
+                </div>
+            </div>
+            <nav class="mt-6">
+                <a href="#" class="block py-2 px-3 rounded bg-gray-700">Dashboards</a>
+                <a href="#" class="block py-2 px-3 mt-2 hover:bg-gray-700">Landing Page</a>
+                <a href="#" class="block py-2 px-3 mt-2 hover:bg-gray-700">Chat</a>
+                <a href="#" class="block py-2 px-3 mt-2 hover:bg-gray-700">Calendar</a>
+                <a href="#" class="block py-2 px-3 mt-2 hover:bg-gray-700">Email</a>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h1 class="text-2xl font-bold">Invoice Dashboard</h1>
+            <div class="grid grid-cols-4 gap-4 mt-4">
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <p class="text-3xl font-bold">16</p>
+                    <p class="text-green-400">Paid Invoice</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <p class="text-3xl font-bold">8</p>
+                    <p class="text-yellow-400">Unpaid Invoice</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <p class="text-3xl font-bold">12</p>
+                    <p class="text-blue-400">Pending Invoice</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center">
+                    <p class="text-3xl font-bold">9</p>
+                    <p class="text-red-400">Overdue Invoice</p>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-between">
+                <input type="text" placeholder="Search invoice..." class="px-3 py-2 rounded bg-gray-800 text-white border border-gray-700">
+                <button class="px-4 py-2 bg-blue-600 rounded text-white">Create Invoice</button>
+            </div>
+            <h2 class="text-3xl font-semibold mb-6">Invoices</h2>
+            
+            <!-- Invoice Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-800 p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Invoice PEI-15475</h3>
+                    <p class="text-gray-400">Front End Development</p>
+                    <p class="text-green-400 text-lg font-bold">$154.98</p>
+                    <p class="text-gray-400">Due Date: 23 May, 2024</p>
+                    <span class="px-3 py-1 bg-green-500 text-white rounded-full text-sm">Paid</span>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Invoice PEI-15476</h3>
+                    <p class="text-gray-400">Laravel Development</p>
+                    <p class="text-red-400 text-lg font-bold">$200.00</p>
+                    <p class="text-gray-400">Due Date: 24 May, 2024</p>
+                    <span class="px-3 py-1 bg-red-500 text-white rounded-full text-sm">Unpaid</span>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Invoice PEI-15480</h3>
+                    <p class="text-gray-400">Asp.Net Services</p>
+                    <p class="text-yellow-400 text-lg font-bold">$250.50</p>
+                    <p class="text-gray-400">Due Date: 28 May, 2024</p>
+                    <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">Pending</span>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Invoice PEI-15481</h3>
+                    <p class="text-gray-400">Asp.Net Services</p>
+                    <p class="text-yellow-400 text-lg font-bold">$250.50</p>
+                    <p class="text-gray-400">Due Date: 28 May, 2024</p>
+                    <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">Pending</span>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Invoice PEI-15482</h3>
+                    <p class="text-gray-400">Asp.Net Services</p>
+                    <p class="text-yellow-400 text-lg font-bold">$250.50</p>
+                    <p class="text-gray-400">Due Date: 28 May, 2024</p>
+                    <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">Pending</span>    
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Invoice PEI-15483</h3>
+                    <p class="text-gray-400">Asp.Net Services</p>
+                    <p class="text-yellow-400 text-lg font-bold">$250.50</p>
+                    <p class="text-gray-400">Due Date: 28 May, 2024</p>
+                    <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">Pending</span>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Invoice PEI-15484</h3>
+                    <p class="text-gray-400">Asp.Net Services</p>
+                    <p class="text-yellow-400 text-lg font-bold">$250.50</p>
+                    <p class="text-gray-400">Due Date: 28 May, 2024</p>
+                    <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">Pending</span>
+                </div>
+                <div class="bg-gray-800 p-5 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold">Invoice PEI-15485</h3>
+                    <p class="text-gray-400">Asp.Net Services</p>
+                    <p class="text-yellow-400 text-lg font-bold">$250.50</p>
+                    <p class="text-gray-400">Due Date: 28 May, 2024</p>
+                    <span class="px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">Pending</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
